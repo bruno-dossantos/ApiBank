@@ -54,7 +54,7 @@ class ActionController extends ApiController
                         $cuenta_destino->save();
                         $action->save();
 
-                        return $this->sendResponse($action, 'Transferencia creada con exito');
+                        return $this->sendResponse($action, 'Transferencia exitosa');
                     } else {
                         return $this->sendError('Error de monto', 'Cuenta origen no cuenta con determinado monto');
                     }
@@ -73,13 +73,13 @@ class ActionController extends ApiController
                     $cuenta_origen->save();
                     $action->save();
 
-                    return $this->sendResponse($action, 'Tu deposito se ha realizado con éxito');
+                    return $this->sendResponse($action, 'Deposito exitoso');
                 } catch (\Exception $e) {
                     return $this->sendError($e, 'Error al realizar el deposito');
                 }
                 break;
             default:
-                return $this->sendError('Error de tipo', 'El tipo de evento no existe, los eventos disponibles son deposito, transferir y retiro');
+                return $this->sendError('Error de tipo', 'Tipo de evento inexistente');
         }
     }
 

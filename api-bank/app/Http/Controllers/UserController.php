@@ -19,7 +19,7 @@ class UserController extends ApiController
             $User->name = $request->input('name');
             $User->email = $request->input('email');
             $User->password = $request->input('password');
-            $User->amount = $request->input('amount');
+            $User->balance = $request->input('balance');
             $User->save();
             return $this->sendResponse($User, "Cuenta creada correctamente");
         } catch (\Exception $e) {
